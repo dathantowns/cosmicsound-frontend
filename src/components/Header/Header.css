@@ -1,0 +1,51 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.header {
+  background-color: rgba(255, 255, 255, 0.1);
+  height: 9vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  color: rgba(255, 255, 255, 0.5);
+  padding: 0 20px;
+  box-sizing: border-box;
+  font-family: "Iceland", sans-serif;
+}
+
+.header:hover {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.header:hover .nav_link {
+  color: rgba(255, 255, 255, 1);
+}
+
+.header_logo {
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.header_nav {
+  display: flex;
+  gap: 30px;
+}
+
+.nav_link {
+  color: rgba(255, 255, 255, 0.3);
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: 1000;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: all 0.5s ease;
+}
+
+.nav_link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
