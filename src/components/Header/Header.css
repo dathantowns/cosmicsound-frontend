@@ -51,3 +51,50 @@ html {
 .nav_link:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .header {
+    padding: 0 15px;
+    height: 8vh;
+  }
+
+  .header_logo {
+    font-size: 28px;
+  }
+
+  .header_nav {
+    gap: 15px;
+  }
+
+  .nav_link {
+    font-size: 20px;
+    padding: 6px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 0 10px;
+    height: 7vh;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .header_logo {
+    font-size: 22px;
+    margin-bottom: 5px;
+  }
+
+  .header_nav {
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav_link {
+    font-size: 16px;
+    padding: 4px 8px;
+    border-radius: 8px;
+  }
+}

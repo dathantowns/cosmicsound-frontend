@@ -13,3 +13,30 @@
   width: 100%;
   height: 100%;
 }
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .song-card {
+    margin: 5px 0;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .song-card__embed iframe {
+    border-radius: 8px;
+    min-height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .song-card {
+    margin: 8px 0;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .song-card__embed iframe {
+    border-radius: 6px;
+    min-height: 180px;
+  }
+}

@@ -29,6 +29,12 @@ const Main = () => {
 
   useEffect(() => {
     const handleScroll = () => {
+      // Skip animations on mobile devices
+      const isMobile = window.innerWidth <= 768;
+      if (isMobile) {
+        return;
+      }
+
       const currentScrollY = window.scrollY;
       const scrollingDown = currentScrollY > lastScrollY.current;
 
