@@ -4,13 +4,18 @@ import "./Header.css";
 const Header = () => {
   return (
     <header className="header">
-      <span className="header_logo">CSS</span>
+      <a href="#home" className="header_logo">
+        CSS
+      </a>
       <nav className="header_nav">
         <a href="#about" className="nav_link">
-          About
+          Services
         </a>
         <a href="#preview" className="nav_link">
           Preview
+        </a>
+        <a href="#bio" className="nav_link">
+          Bio
         </a>
         <a href="#book-now" className="nav_link">
           Book Now

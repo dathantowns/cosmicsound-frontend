@@ -5,6 +5,17 @@
   z-index: 1;
 }
 
+.main__home {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  text-align: center;
+}
+
 .main__video {
   position: fixed;
   top: 0;
@@ -153,6 +164,7 @@
 
 .main__section_preview-linktree {
   color: white;
+  background-color: rgba(0, 0, 0, 0.5);
   font-size: 30px;
   text-align: center;
   display: flex;
@@ -167,4 +179,30 @@
   padding: 20px 40px;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.main__section_preview-linktree:hover {
+  background-color: rgba(0, 0, 0, 1);
+  color: white;
+}
+
+.main__section_bio {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 10vh auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  font-family: "Iceland", sans-serif;
+  color: white;
+  font-size: 24px;
+  line-height: 1.6;
+  scroll-margin-top: 12vh;
+}
+
+.main__section_bio-description {
+  font-size: 30px;
 }

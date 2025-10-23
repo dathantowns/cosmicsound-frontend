@@ -29,6 +29,8 @@ html {
   color: white;
   font-size: 40px;
   font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .header_nav {
