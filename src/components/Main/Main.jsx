@@ -12,6 +12,21 @@ const Main = () => {
   const currentProgress = useRef(0);
   const previewProgress = useRef(0);
 
+  // Load Calendly script
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://assets.calendly.com/assets/external/widget.js";
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      // Cleanup script when component unmounts
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+    };
+  }, []);
+
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -179,6 +194,16 @@ const Main = () => {
     setExpandedCard(expandedCard === index ? null : index);
   };
 
+  const handleBookNowClick = () => {
+    const bookingSection = document.getElementById("book-now");
+    if (bookingSection) {
+      bookingSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
   return (
     <main className="main">
       <video autoPlay loop muted className="main__video">
@@ -187,7 +212,9 @@ const Main = () => {
       <section className="main__home" id="home">
         <h1 className="main__title">COSMIC SOUND STUDIOS</h1>
         <h2 className="main__subtitle">Infinite sound. One studio.</h2>
-        <button className="main__book-btn">BOOK NOW</button>
+        <button className="main__book-btn" onClick={handleBookNowClick}>
+          BOOK NOW
+        </button>
         <span className="main__scroll-down">▼</span>
       </section>
       <section className="main__section_about" id="about" ref={aboutSectionRef}>
@@ -196,36 +223,42 @@ const Main = () => {
           description="Professional mixing services to bring your tracks to life."
           onClick={() => handleCardClick(0)}
           isExpanded={expandedCard === 0}
+          onBookNow={handleBookNowClick}
         />
         <AboutCard
           title="Mastering"
           description="Professional mastering services to perfect your sound."
           onClick={() => handleCardClick(1)}
           isExpanded={expandedCard === 1}
+          onBookNow={handleBookNowClick}
         />
         <AboutCard
           title="Production"
           description="Construction, arrangement, and sound design to bring your sound to life."
           onClick={() => handleCardClick(2)}
           isExpanded={expandedCard === 2}
+          onBookNow={handleBookNowClick}
         />
         <AboutCard
           title="Music Composition"
           description="Composition of musical pieces of various genres and styles."
           onClick={() => handleCardClick(3)}
           isExpanded={expandedCard === 3}
+          onBookNow={handleBookNowClick}
         />
         <AboutCard
           title="Film Scoring"
           description="Professional scoring services for films, commercials, and media projects."
           onClick={() => handleCardClick(4)}
           isExpanded={expandedCard === 4}
+          onBookNow={handleBookNowClick}
         />
         <AboutCard
           title="Video Editing"
           description="Professional visual composition and video editing services."
           onClick={() => handleCardClick(5)}
           isExpanded={expandedCard === 5}
+          onBookNow={handleBookNowClick}
         />
       </section>
       <section
@@ -260,6 +293,14 @@ const Main = () => {
           project he undertakes, delivering high-quality audio experiences that
           captivate and inspire.
         </p>
+      </section>
+      <section className="main__section_booking" id="book-now">
+        <h2 className="main__section_booking-title">BOOK A SESSION</h2>
+        <div
+          className="calendly-inline-widget"
+          data-url="https://calendly.com/djy21"
+          style={{ minWidth: "320px", height: "500px" }}
+        ></div>
       </section>
     </main>
   );
