@@ -19,6 +19,7 @@ export default function AboutCard({
       className={`about-card ${isExpanded ? "about-card--expanded" : ""}`}
       onClick={onClick}
     >
+      {isExpanded && <button className="about-card__close-button">X</button>}
       <h3 className="about-card__title">{title}</h3>
       {isExpanded && <p className="about-card__description">{description}</p>}
       {isExpanded && (

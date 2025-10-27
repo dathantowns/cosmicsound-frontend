@@ -27,13 +27,31 @@
 
 .about-card--expanded {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 95%;
-  height: 90%;
+  top: 20px;
+  left: 20px;
+  width: 96%;
+  height: 93.5%;
   z-index: 10;
   max-width: none;
   margin: 0;
+}
+
+.about-card__close-button {
+  position: absolute;
+  width: 40px;
+  top: 15px;
+  right: 30px;
+  background: transparent;
+  border: 1px solid white;
+  border-radius: 10px;
+  color: white;
+  font-family: "Iceland", sans-serif;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+.about-card__close-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .about-card__title {

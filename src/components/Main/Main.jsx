@@ -304,7 +304,7 @@ const Main = () => {
         <h2 className="main__section_booking-title">BOOK A SESSION</h2>
         <div
           className="calendly-inline-widget"
-          data-url="https://calendly.com/djy21"
+          data-url="https://calendly.com/cosmicsound"
           style={{ minWidth: "320px", height: "500px" }}
         ></div>
       </section>
